@@ -9,6 +9,8 @@ public:
 private:
   void velocityCallback(const geometry_msgs::Twist::ConstPtr& vel_msg);
 
+  const double TP;
+
   ros::NodeHandle nh_;
   ros::Subscriber vel_sub_;
   ros::Publisher pose_pub_;
