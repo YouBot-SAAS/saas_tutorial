@@ -10,6 +10,11 @@ private:
   void joyCallback(const sensor_msgs::Joy::ConstPtr& joy_msg);
 
   ros::NodeHandle nh_;
+  ros::NodeHandle nh_local_;
+
   ros::Subscriber joy_sub_;
   ros::Publisher vel_pub_;
+
+  double k_v_;
+  double k_w_;
 };
