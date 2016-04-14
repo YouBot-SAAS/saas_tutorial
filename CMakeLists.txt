@@ -128,18 +128,6 @@ include_directories(
 # add_dependencies(saas_tutorial ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-add_executable(publisher src/publisher.cpp)
-add_dependencies(publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(publisher ${catkin_LIBRARIES})
-
-add_executable(listener src/listener.cpp)
-add_dependencies(listener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(listener ${catkin_LIBRARIES})
-
-add_executable(simulator src/simulator.cpp include/simulator.h)
-add_dependencies(simulator ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(simulator ${catkin_LIBRARIES})
-
 add_executable(joy_teleop src/joy_teleop.cpp include/joy_teleop.h)
 add_dependencies(joy_teleop ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(joy_teleop ${catkin_LIBRARIES})
