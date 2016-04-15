@@ -12,9 +12,9 @@ JoyTeleop::JoyTeleop() : nh_(""), nh_local_("~") {
 
 void JoyTeleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy_msg) {
   geometry_msgs::Twist msg;
-  msg.linear.x = k_v_ * joy_msg->axes[1];
-  msg.linear.y = k_v_ * joy_msg->axes[0];
-  msg.angular.z = k_w_ * joy_msg->axes[3];
+  msg.linear.x = k_v_ * (joy_msg->axes[2]+1) * joy_msg->axes[1];
+  msg.linear.y = k_v_ * (joy_msg->axes[2]+1)* joy_msg->axes[0];
+  msg.angular.z = k_w_ * (joy_msg->axes[2]+1)* joy_msg->axes[3];
 
   vel_pub_.publish(msg);
 }
